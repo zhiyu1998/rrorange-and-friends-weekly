@@ -4,6 +4,7 @@ import { createSideBarEN } from "../utils/createSideBar";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/rrorange-and-friends-weekly/",
   title: "RrOrange and Friends Weekly",
   description: "RrOrange and Friends Weekly: Sharing daily surfing on the Internet, interesting websites, app applications, resource sharing, efficiency software toolsets, etc.",
   lang: "en-US", //语言
