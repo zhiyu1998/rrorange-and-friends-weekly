@@ -22,7 +22,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy-gh-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
