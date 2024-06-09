@@ -3,8 +3,7 @@ import { writeFileSync } from "node:fs";
 import { Feed } from "feed";
 import { createContentLoader, type SiteConfig } from "vitepress";
 
-// TODO
-const hostname = "https://fav0.com";
+const hostname = "https://zhiyu1998.github.io/rrorange-and-friends-weekly";
 
 export async function createRssFileZH(config: SiteConfig) {
   const feed = new Feed({

@@ -3,9 +3,9 @@ import { type HeadConfig, type TransformContext } from "vitepress";
 // 处理每个页面的元数据
 export function handleHeadMeta(context: TransformContext) {
   const { description, title, relativePath, frontmatter } = context.pageData;
-  //TODO
+
   const curDesc = description || context.description;
-  const cover = frontmatter.cover || 'https://fav0.com/favicon-512x512.png'
+  const cover = frontmatter.cover || 'https://zhiyu1998.github.io/rrorange-and-friends-weekly/favicon-512x512.png'
   const cardType = frontmatter.cover ? 'summary_large_image' : 'summary'
   // 增加Twitter卡片
   const ogUrl: HeadConfig = ["meta", { property: "og:url", content: addBase(relativePath) }]
@@ -27,9 +27,8 @@ export function handleHeadMeta(context: TransformContext) {
   return [ ...twitterHead, ...preloadHead ]
 }
 
-// TODO
 export function addBase(relativePath: string) {
-  const host = 'https://fav0.com'
+  const host = 'https://zhiyu1998.github.io/rrorange-and-friends-weekly'
   if (relativePath.startsWith('/')) {
     return host + relativePath
   } else {
