@@ -41,9 +41,9 @@ jobs:
       - name: 📄设置页面
         uses: actions/configure-pages@v4
       - name: 🔥安装依赖
-        run: npm ci # 或 pnpm install / yarn install / bun install
+        run: yarn install # 或 pnpm install / yarn install / bun install
       - name: 🪛构建 VitePress
-        run: npm run docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+        run: yarn docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
       - name: ⏫上传 Artifact
         uses: actions/upload-pages-artifact@v3
         with:
