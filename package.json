@@ -1,0 +1,29 @@
+{
+  "name": "RrOrange",
+  "version": "1.0.0",
+  "description": "《大橘和朋友们的周刊》： 分享日常冲浪互联网看到好玩的网站、app应用、资源分享、效率软件工具集等",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "feed": "^4.2.2",
+    "sass": "^1.77.2",
+    "unplugin-auto-import": "^0.17.6",
+    "unplugin-vue-components": "^0.27.0",
+    "vitepress": "^1.2.3"
+  },
+  "dependencies": {
+    "@giscus/vue": "^3.0.0",
+    "tdesign-icons-vue-next": "^0.2.2",
+    "tdesign-vue-next": "^1.9.5",
+    "vue": "^3.4.27"
+  }
+}

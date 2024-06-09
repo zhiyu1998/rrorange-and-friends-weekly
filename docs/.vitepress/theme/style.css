@@ -1,0 +1,153 @@
+/** 代码字体 */
+@font-face {
+	font-family: "FiraCode";
+	src: url("/assets/fonts/FiraCode-VF.woff2");
+}
+/** 正文字体 */
+@font-face {
+	font-family: "SourceHanSerifCN";
+	src: local("SourceHanSerifCN"), url("/assets/fonts/SourceHanSerifCN-VF.woff2");
+}
+
+/* 参考 https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
+
+/**
+ * Colors Base
+ *
+ * These are the pure base color presets. Most of the time, you should not be
+ * using these colors directly in the theme but rather use "Colors Theme"
+ * instead because those are "Theme (light or dark)" dependant.
+ * -------------------------------------------------------------------------- */
+
+:root {
+	--vp-c-blue-1: #2949a4;
+	--vp-c-blue-2: #0749ff;
+	--vp-c-blue-3: #7494ec;
+	--vp-c-blue-soft: rgba(110, 156, 190, 0.14);
+
+	--vp-c-yellow-1: #aa9100;
+	--vp-c-yellow-2: #d5b811;
+	--vp-c-yellow-3: #ecce23;
+	--vp-c-yellow-soft: rgba(186, 186, 186, 0.14);
+}
+
+/**
+ * Colors Theme
+ * -------------------------------------------------------------------------- */
+
+:root {
+	--vp-c-brand-1: var(--vp-c-blue-1);
+	--vp-c-brand-2: var(--vp-c-blue-2);
+	--vp-c-brand-3: var(--vp-c-blue-3);
+	--vp-c-brand-soft: var(--vp-c-blue-soft);
+}
+
+.dark {
+	--vp-c-brand-1: var(--vp-c-yellow-1);
+	--vp-c-brand-2: var(--vp-c-yellow-2);
+	--vp-c-brand-3: var(--vp-c-yellow-3);
+	--vp-c-brand-soft: var(--vp-c-yellow-soft);
+}
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+
+:root {
+	--vp-font-family-base: "SourceHanSerifCN";
+	--vp-font-family-mono: "FiraCode";
+}
+
+/**
+ * 特殊配置
+ * -------------------------------------------------------------------------- */
+
+/* 侧边栏标题隐藏单行文本溢出 */
+.VPSidebar .items p {
+	display: inline-block;
+	width: calc(var(--vp-sidebar-width) - 100px);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/** 总体类 */
+::selection {
+	background: var(--vp-c-brand-1);
+	color: var(--vp-c-bg);
+}
+
+::-moz-selection {
+	background: var(--vp-c-brand-1);
+	color: var(--vp-c-bg);
+}
+
+::-webkit-selection {
+	background: var(--vp-c-brand-1);
+	color: var(--vp-c-bg);
+}
+
+/** 链接样式 */
+.VPDoc a {
+	text-decoration: none !important;
+}
+
+.VPDoc a:hover {
+	text-decoration: underline !important;
+}
+
+.VPDoc img {
+	border-radius: 4px;
+	cursor: zoom-in;
+}
+
+/* jupyter输出代码不换行显示 */
+main > div > div > pre > code {
+	white-space: normal;
+}
+
+#app {
+	/* 取消移动端点击div默认高亮效果 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/** 磨砂玻璃效果设置 */
+.VPNav .content .content-body {
+	backdrop-filter: blur(36px);
+	background-color: linear-gradient(
+		to bottom,
+		rgba(var(--vp-nav-bg-color), 0.98),
+		rgba(var(--vp-nav-bg-color), 0.6)
+	) !important;
+}
+
+.VPLocalNav,
+.has-sidebar .container {
+	backdrop-filter: blur(36px);
+	background-color: linear-gradient(
+		to bottom,
+		rgba(var(--vp-nav-bg-color), 0.6),
+		rgba(var(--vp-nav-bg-color), 0.4)
+	) !important;
+}
+
+.VPLocalNav,
+.has-sidebar,
+.has-aside .container {
+	backdrop-filter: none;
+	background-color: none !important;
+}
+
+/** i18n选项不显示下拉图标 */
+.vpi-chevron-down, .text-icon {
+	display: none;
+}
+
+/** 主题切换按钮样式 */
+.VPSwitchAppearance {
+  width: 22px !important;
+}
+
+.VPSwitchAppearance .check {
+  transform: none !important;
+}
