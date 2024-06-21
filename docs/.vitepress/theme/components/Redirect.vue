@@ -10,8 +10,9 @@ const route = useRoute();
 const { path } = route;
 const sideBar = path.startsWith("/en") ? createSideBarEN() : createSideBarZH();
 // 如果有base就修改
-const base = "/rrorange-and-friends-weekly"
-const firstItemLink = base + sideBar[0].items[0].link;
+// const base = "/rrorange-and-friends-weekly"
+// const firstItemLink = base + sideBar[0].items[0].link;
+const firstItemLink = sideBar[0].items[0].link;
 
 router.go(firstItemLink);
 </script>
