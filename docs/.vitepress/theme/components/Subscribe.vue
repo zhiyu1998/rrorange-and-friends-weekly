@@ -1,7 +1,7 @@
 <template>
 	<t-button v-if="isEN" theme="default" variant="dashed" style="margin-bottom: 10px" @click="jumpToMedium">
 		<template #icon><NotificationIcon /></template>
-		Subscribe in Medium
+		Subscribe in Telegram
 	</t-button>
 	<t-popup v-else placement="right" show-arrow destroy-on-close>
 		<template #content>
@@ -24,7 +24,7 @@ const route = useRoute();
 const isEN = computed(() => route.path.startsWith("/en"));
 
 function jumpToMedium() {
-	window.open("https://medium.com/@Justin3go", "_blank");
+	window.open("https://t.me/RrOrangeAndFriends", "_blank");
 }
 </script>
 <style scoped>
