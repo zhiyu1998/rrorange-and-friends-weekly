@@ -18,6 +18,8 @@
 ![Support I18N](https://img.shields.io/badge/Support%20I18N-0078D4?style=for-the-badge&logo=google-translate&logoColor=white)
 ![SEO](https://img.shields.io/badge/SEO-4285F4?style=for-the-badge&logo=google&logoColor=white)
 
+**中文** | [Enlish](./README-en.md)
+
 记录每周冲浪互联网看到好玩的网站、app应用、资源分享、效率软件工具集等
 
 如果内容丰富最快的话`预计是每周六/周末发布`
