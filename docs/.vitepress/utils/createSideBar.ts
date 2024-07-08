@@ -21,7 +21,7 @@ export function createSideBarEN() {
       text: 'The Year 2024',
       collapsed: true,
       items: [
-        { text: 'Vol. 004: The Last Supper', link: '/posts/2024/004' },
+        { text: 'Vol. 004: Last Dinner After Graduation', link: '/posts/2024/004' },
         { text: 'Vol. 003: Jellyfish Dance', link: '/posts/2024/003' },
         { text: 'Vol. 002: Chimelong Ocean Kingdom', link: '/posts/2024/002' },
         { text: 'Vol. 001: Solitary House in the Fields', link: '/en/posts/2024/001' },
