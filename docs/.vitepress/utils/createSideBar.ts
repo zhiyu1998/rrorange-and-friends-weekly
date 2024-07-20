@@ -4,6 +4,7 @@ export function createSideBarZH() {
       text: '2024年',
       collapsed: true,
       items: [
+        { text: '第006期 - 小霸王情', link: '/posts/2024/006' },
         { text: '第005期 - 鸣曲咖啡', link: '/posts/2024/005' },
         { text: '第004期 - 最后晚餐', link: '/posts/2024/004' },
         { text: '第003期 - 水母绚舞', link: '/posts/2024/003' },
@@ -22,7 +23,8 @@ export function createSideBarEN() {
       text: 'The Year 2024',
       collapsed: true,
       items: [
-        { text: 'Vol. 005: Last Dinner After Graduation', link: '/posts/2024/005' },
+        { text: 'Vol. 006: Nostalgia for Xiao Ba Wang', link: '/posts/2024/006' },
+        { text: 'Vol. 005: KK Coffee', link: '/posts/2024/005' },
         { text: 'Vol. 004: Last Dinner After Graduation', link: '/posts/2024/004' },
         { text: 'Vol. 003: Jellyfish Dance', link: '/posts/2024/003' },
         { text: 'Vol. 002: Chimelong Ocean Kingdom', link: '/posts/2024/002' },
