@@ -4,6 +4,7 @@ export function createSideBarZH() {
       text: '2024年',
       collapsed: true,
       items: [
+        { text: '第009期 - 煤气罐人', link: '/posts/2024/009' },
         { text: '第008期 - 落日飞车', link: '/posts/2024/008' },
         { text: '第007期 - 归途有风', link: '/posts/2024/007' },
         { text: '第006期 - 小霸王情', link: '/posts/2024/006' },
@@ -25,6 +26,7 @@ export function createSideBarEN() {
       text: 'The Year 2024',
       collapsed: true,
       items: [
+        { text: 'Vol.009 - Butane Tank Person', link: '/posts/2024/009' },
         { text: 'Vol. 008: Sunset Rollercoaster', link: '/posts/2024/008' },
         { text: 'Vol. 007: Wind on the journey home', link: '/posts/2024/007' },
         { text: 'Vol. 006: Nostalgia for Xiao Ba Wang', link: '/posts/2024/006' },
