@@ -5,7 +5,7 @@
 				<img src="https://i.imgur.com/b6IpckJ.png" alt="" />
 			</div>
 		</template>
-		<t-button theme="default" variant="dashed" style="margin-bottom: 10px">
+		<t-button theme="default" variant="dashed" style="margin-bottom: 10px" @click="jumpToMedium">
 			<template #icon><NotificationIcon /></template>
 			订阅本周刊（Telegram）
 		</t-button>

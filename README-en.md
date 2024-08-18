@@ -34,8 +34,6 @@ If inspiration runs dry, new content will be published based on circumstances. F
 
 - 🌓 Provides light and dark mode switching function to adapt to different reading environments.
 
-- 🌍 Supports bilingual interface in Chinese and English for the convenience of users of different languages.
-
 - 📡 Offers RSS subscription feature, supporting updates in both Chinese and English content.
 
 - 💬 Integrates Giscus comment system for user communication and feedback.
