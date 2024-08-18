@@ -14,7 +14,7 @@
 			emit-metadata="0"
 			input-position="top"
 			:theme="theme"
-			:lang="lang"
+			lang="zh-Hans"
 			loading="lazy"
 			crossorigin="anonymous"
 		/>
@@ -30,7 +30,6 @@ const { isDark } = useData();
 
 const term = computed(() => route.path.slice(-3));
 const theme = computed(() => (isDark.value ? "noborder_dark" : "noborder_light"));
-const lang = computed(() => route.path.startsWith("/en") ? 'en' : 'zh-Hans');
 
 // language变化不会触发重新加载，这里v-if强制刷新
 const showComment = ref(true);

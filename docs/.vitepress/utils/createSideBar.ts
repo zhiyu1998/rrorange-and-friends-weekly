@@ -18,25 +18,3 @@ export function createSideBarZH() {
     }
   ]
 }
-
-// 英文侧边栏更换格式，否则太占位了
-export function createSideBarEN() {
-  return [
-    {
-      text: 'The Year 2024',
-      collapsed: true,
-      items: [
-        { text: 'Vol.009 - Butane Tank Person', link: '/posts/2024/009' },
-        { text: 'Vol. 008: Sunset Rollercoaster', link: '/posts/2024/008' },
-        { text: 'Vol. 007: Wind on the journey home', link: '/posts/2024/007' },
-        { text: 'Vol. 006: Nostalgia for Xiao Ba Wang', link: '/posts/2024/006' },
-        { text: 'Vol. 005: KK Coffee', link: '/posts/2024/005' },
-        { text: 'Vol. 004: Last Dinner After Graduation', link: '/posts/2024/004' },
-        { text: 'Vol. 003: Jellyfish Dance', link: '/posts/2024/003' },
-        { text: 'Vol. 002: Chimelong Ocean Kingdom', link: '/posts/2024/002' },
-        { text: 'Vol. 001: Solitary House in the Fields', link: '/en/posts/2024/001' },
-        { text: 'Vol. 000: A New Beginning', link: '/en/posts/2024/000' },
-      ]
-    }
-  ]
-}

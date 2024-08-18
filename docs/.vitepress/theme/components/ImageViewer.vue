@@ -16,18 +16,17 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, reactive, ref, watch } from "vue";
 import { useRoute } from "vitepress";
-import enConfig from 'tdesign-vue-next/es/locale/en_US';
 import zhConfig from 'tdesign-vue-next/es/locale/zh_CN';
 
 import TDesignDark from "./TDesignDark.vue";
 
 // 处理TDesign的国际化
 const route = useRoute();
-const globalConfig = ref< typeof zhConfig | typeof enConfig>(zhConfig);
+const globalConfig = ref< typeof zhConfig >(zhConfig);
 watch(
 	() => route.path,
 	() => {
-    globalConfig.value = route.path.startsWith("/en") ? enConfig : zhConfig;
+    globalConfig.value = zhConfig;
 	},
 	{
 		immediate: true,
