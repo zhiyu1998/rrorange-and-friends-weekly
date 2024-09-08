@@ -4,6 +4,7 @@ export function createSideBarZH() {
       text: '2024年',
       collapsed: true,
       items: [
+        { text: '第013期 - 夜行未央', link: '/posts/2024/013' },
         { text: '第012期 - 云掩夜城', link: '/posts/2024/012' },
         { text: '第011期 - 云下山谷', link: '/posts/2024/011' },
         { text: '第010期 - 敬祖思亲', link: '/posts/2024/010' },
