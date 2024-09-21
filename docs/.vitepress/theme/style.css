@@ -151,3 +151,10 @@ main > div > div > pre > code {
 .VPSwitchAppearance .check {
   transform: none !important;
 }
+
+a:link {
+	color: #E66700;
+}
+a:visited {
+	color: #E8B86D;
+}
