@@ -1,6 +1,6 @@
 {
   "index_name": "rrorangeandfriends",
-  "start_urls": ["https://rrorangeandfriends.site/"],
+  "start_urls": ["https://rrorangeandfriends.site/posts/2024/000"],
   "rateLimit": 8,
   "maxDepth": 10,
   "selectors": {
