@@ -1,7 +1,8 @@
 name: Algolia DocSearch Scraper
 on:
   push:
-    branches: [release-algolia]
+    branches:
+      - main
 
 jobs:
   algolia:
