@@ -1,5 +1,5 @@
 import { defineConfig, type SiteConfig } from 'vitepress'
-// 自动导入TDesign 
+// 自动导入TDesign
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { TDesignResolver } from 'unplugin-vue-components/resolvers';
@@ -49,9 +49,9 @@ export default defineConfig({
     outline: [2, 4],
 
     search: {
-      provider: "local",
+      provider: "algolia",
       options: {
-        locales: { ...zhSearch }
+        ...zhSearch
       }
     },
 

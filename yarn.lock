@@ -548,46 +548,46 @@
   resolved "https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.24.0.tgz#0574d7e87b44ee8511d08cc7f914bcb802b70818"
   integrity sha512-fbMkAF7fufku0N2dE5TBXcNlg0pt0cJue4xBRE2Qc5Vqikxr4VCgKj/ht6SMdFcOacVA9rqF70APJ8RN/4vMJw==
 
-"@shikijs/core@1.22.0", "@shikijs/core@^1.22.0":
-  version "1.22.0"
-  resolved "https://registry.npmmirror.com/@shikijs/core/-/core-1.22.0.tgz#74e5d4485e5f7afa85109e322b42e400686f92bb"
-  integrity sha512-S8sMe4q71TJAW+qG93s5VaiihujRK6rqDFqBnxqvga/3LvqHEnxqBIOPkt//IdXVtHkQWKu4nOQNk0uBGicU7Q==
+"@shikijs/core@1.22.2", "@shikijs/core@^1.22.2":
+  version "1.22.2"
+  resolved "https://registry.npmmirror.com/@shikijs/core/-/core-1.22.2.tgz#9c22bd4cc8a4d6c062461cfd35e1faa6c617ca25"
+  integrity sha512-bvIQcd8BEeR1yFvOYv6HDiyta2FFVePbzeowf5pPS1avczrPK+cjmaxxh0nx5QzbON7+Sv0sQfQVciO7bN72sg==
   dependencies:
-    "@shikijs/engine-javascript" "1.22.0"
-    "@shikijs/engine-oniguruma" "1.22.0"
-    "@shikijs/types" "1.22.0"
+    "@shikijs/engine-javascript" "1.22.2"
+    "@shikijs/engine-oniguruma" "1.22.2"
+    "@shikijs/types" "1.22.2"
     "@shikijs/vscode-textmate" "^9.3.0"
     "@types/hast" "^3.0.4"
     hast-util-to-html "^9.0.3"
 
-"@shikijs/engine-javascript@1.22.0":
-  version "1.22.0"
-  resolved "https://registry.npmmirror.com/@shikijs/engine-javascript/-/engine-javascript-1.22.0.tgz#2e5db29f0421755492f5279f8224ef7a7f907a29"
-  integrity sha512-AeEtF4Gcck2dwBqCFUKYfsCq0s+eEbCEbkUuFou53NZ0sTGnJnJ/05KHQFZxpii5HMXbocV9URYVowOP2wH5kw==
+"@shikijs/engine-javascript@1.22.2":
+  version "1.22.2"
+  resolved "https://registry.npmmirror.com/@shikijs/engine-javascript/-/engine-javascript-1.22.2.tgz#62e90dbd2ed1d78b972ad7d0a1f8ffaaf5e43279"
+  integrity sha512-iOvql09ql6m+3d1vtvP8fLCVCK7BQD1pJFmHIECsujB0V32BJ0Ab6hxk1ewVSMFA58FI0pR2Had9BKZdyQrxTw==
   dependencies:
-    "@shikijs/types" "1.22.0"
+    "@shikijs/types" "1.22.2"
     "@shikijs/vscode-textmate" "^9.3.0"
     oniguruma-to-js "0.4.3"
 
-"@shikijs/engine-oniguruma@1.22.0":
-  version "1.22.0"
-  resolved "https://registry.npmmirror.com/@shikijs/engine-oniguruma/-/engine-oniguruma-1.22.0.tgz#74c661fac4cd1f08f2c09b5d6e2fd2a6720d0401"
-  integrity sha512-5iBVjhu/DYs1HB0BKsRRFipRrD7rqjxlWTj4F2Pf+nQSPqc3kcyqFFeZXnBMzDf0HdqaFVvhDRAGiYNvyLP+Mw==
+"@shikijs/engine-oniguruma@1.22.2":
+  version "1.22.2"
+  resolved "https://registry.npmmirror.com/@shikijs/engine-oniguruma/-/engine-oniguruma-1.22.2.tgz#b12a44e3faf486e19fbcf8952f4b56b9b9b8d9b8"
+  integrity sha512-GIZPAGzQOy56mGvWMoZRPggn0dTlBf1gutV5TdceLCZlFNqWmuc7u+CzD0Gd9vQUTgLbrt0KLzz6FNprqYAxlA==
   dependencies:
-    "@shikijs/types" "1.22.0"
+    "@shikijs/types" "1.22.2"
     "@shikijs/vscode-textmate" "^9.3.0"
 
-"@shikijs/transformers@^1.22.0":
-  version "1.22.0"
-  resolved "https://registry.npmmirror.com/@shikijs/transformers/-/transformers-1.22.0.tgz#f36fa4d769e36db9a91e09877cf48b3a04d26aba"
-  integrity sha512-k7iMOYuGQA62KwAuJOQBgH2IQb5vP8uiB3lMvAMGUgAMMurePOx3Z7oNqJdcpxqZP6I9cc7nc4DNqSKduCxmdg==
+"@shikijs/transformers@^1.22.2":
+  version "1.22.2"
+  resolved "https://registry.npmmirror.com/@shikijs/transformers/-/transformers-1.22.2.tgz#1d6c2d6aed9229f96932096dff7eee5facad3f56"
+  integrity sha512-8f78OiBa6pZDoZ53lYTmuvpFPlWtevn23bzG+azpPVvZg7ITax57o/K3TC91eYL3OMJOO0onPbgnQyZjRos8XQ==
   dependencies:
-    shiki "1.22.0"
+    shiki "1.22.2"
 
-"@shikijs/types@1.22.0", "@shikijs/types@^1.22.0":
-  version "1.22.0"
-  resolved "https://registry.npmmirror.com/@shikijs/types/-/types-1.22.0.tgz#d2a572381395c9308b472c8199b8e0289753b9ad"
-  integrity sha512-Fw/Nr7FGFhlQqHfxzZY8Cwtwk5E9nKDUgeLjZgt3UuhcM3yJR9xj3ZGNravZZok8XmEZMiYkSMTPlPkULB8nww==
+"@shikijs/types@1.22.2", "@shikijs/types@^1.22.2":
+  version "1.22.2"
+  resolved "https://registry.npmmirror.com/@shikijs/types/-/types-1.22.2.tgz#695a283f19963fe0638fc2646862ba5cfc4623a8"
+  integrity sha512-NCWDa6LGZqTuzjsGfXOBWfjS/fDIbDdmVDug+7ykVe1IKT4c1gakrvlfFYp5NhAXH/lyqLM8wsAPo5wNy73Feg==
   dependencies:
     "@shikijs/vscode-textmate" "^9.3.0"
     "@types/hast" "^3.0.4"
@@ -728,19 +728,19 @@
     "@vue/compiler-dom" "3.5.12"
     "@vue/shared" "3.5.12"
 
-"@vue/devtools-api@^7.4.6":
-  version "7.5.2"
-  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-7.5.2.tgz#2d3f8da97a56b966572c02249b7bcf777aa105cd"
-  integrity sha512-VxPbAQxJrYSIkoGVvQ2oOoKW8u4CMpvRLySTxhoJA38z8bQEGy9GO33eoRY/DulJbSFRfjZFNvH+dh8B4qpesQ==
+"@vue/devtools-api@^7.5.4":
+  version "7.6.2"
+  resolved "https://registry.npmmirror.com/@vue/devtools-api/-/devtools-api-7.6.2.tgz#9beb95e3faba24aa89b8237f4ac713210a28b6f7"
+  integrity sha512-NCT0ujqlwAhoFvCsAG7G5qS8w/A/dhvFSt2BhmNxyqgpYDrf9CG1zYyWLQkE3dsZ+5lCT6ULUic2VKNaE07Vzg==
   dependencies:
-    "@vue/devtools-kit" "^7.5.2"
+    "@vue/devtools-kit" "^7.6.2"
 
-"@vue/devtools-kit@^7.5.2":
-  version "7.5.2"
-  resolved "https://registry.npmmirror.com/@vue/devtools-kit/-/devtools-kit-7.5.2.tgz#b6460c7c37363e3397430f5a69786d0e315dbee7"
-  integrity sha512-0leUOE2HBfl8sHf9ePKzxqnCFskkU22tWWqd9OfeSlslAKE30/TViYvWcF4vgQmPlJnAAdHU0WfW5dYlCeOiuw==
+"@vue/devtools-kit@^7.6.2":
+  version "7.6.2"
+  resolved "https://registry.npmmirror.com/@vue/devtools-kit/-/devtools-kit-7.6.2.tgz#17f1584c74c0e30fa2086a89e65acbce3fc47945"
+  integrity sha512-k61BxHRmcTtIQZFouF9QWt9nCCNtSdw12lhg8VNtHq5/XOBGD+ewiK27a40UJ8UPYoCJvi80hbvbYr5E/Zeu1g==
   dependencies:
-    "@vue/devtools-shared" "^7.5.2"
+    "@vue/devtools-shared" "^7.6.2"
     birpc "^0.2.19"
     hookable "^5.5.3"
     mitt "^3.0.1"
@@ -748,10 +748,10 @@
     speakingurl "^14.0.1"
     superjson "^2.2.1"
 
-"@vue/devtools-shared@^7.5.2":
-  version "7.5.2"
-  resolved "https://registry.npmmirror.com/@vue/devtools-shared/-/devtools-shared-7.5.2.tgz#e4480dbf7ebb2187bf47f1ba548907d20b7aeffa"
-  integrity sha512-+zmcixnD6TAo+zwm30YuwZckhL9iIi4u+gFwbq9C8zpm3SMndTlEYZtNhAHUhOXB+bCkzyunxw80KQ/T0trF4w==
+"@vue/devtools-shared@^7.6.2":
+  version "7.6.2"
+  resolved "https://registry.npmmirror.com/@vue/devtools-shared/-/devtools-shared-7.6.2.tgz#585769040c3a84a641087fb722377a526b70b59d"
+  integrity sha512-lcjyJ7hCC0W0kNwnCGMLVTMvDLoZgjcq9BvboPgS+6jQyDul7fpzRSKTGtGhCHoxrDox7qBAKGbAl2Rcf7GE1A==
   dependencies:
     rfdc "^1.4.1"
 
@@ -1458,15 +1458,15 @@ scule@^1.3.0:
   resolved "https://registry.npmmirror.com/scule/-/scule-1.3.0.tgz#6efbd22fd0bb801bdcc585c89266a7d2daa8fbd3"
   integrity sha512-6FtHJEvt+pVMIB9IBY+IcCJ6Z5f1iQnytgyfKMhDKgmzYG+TeH/wx1y3l27rshSbLiSanrR9ffZDrEsmjlQF2g==
 
-shiki@1.22.0, shiki@^1.22.0:
-  version "1.22.0"
-  resolved "https://registry.npmmirror.com/shiki/-/shiki-1.22.0.tgz#45d1dfff0e03a598af70e2ec8592f14ef07827b4"
-  integrity sha512-/t5LlhNs+UOKQCYBtl5ZsH/Vclz73GIqT2yQsCBygr8L/ppTdmpL4w3kPLoZJbMKVWtoG77Ue1feOjZfDxvMkw==
+shiki@1.22.2, shiki@^1.22.2:
+  version "1.22.2"
+  resolved "https://registry.npmmirror.com/shiki/-/shiki-1.22.2.tgz#ed109a3d0850504ad5a1edf8496470a2121c5b7b"
+  integrity sha512-3IZau0NdGKXhH2bBlUk4w1IHNxPh6A5B2sUpyY+8utLu2j/h1QpFkAaUA1bAMxOWWGtTWcAh531vnS4NJKS/lA==
   dependencies:
-    "@shikijs/core" "1.22.0"
-    "@shikijs/engine-javascript" "1.22.0"
-    "@shikijs/engine-oniguruma" "1.22.0"
-    "@shikijs/types" "1.22.0"
+    "@shikijs/core" "1.22.2"
+    "@shikijs/engine-javascript" "1.22.2"
+    "@shikijs/engine-oniguruma" "1.22.2"
+    "@shikijs/types" "1.22.2"
     "@shikijs/vscode-textmate" "^9.3.0"
     "@types/hast" "^3.0.4"
 
@@ -1691,10 +1691,10 @@ vfile@^6.0.0:
     "@types/unist" "^3.0.0"
     vfile-message "^4.0.0"
 
-vite@^5.4.8:
-  version "5.4.9"
-  resolved "https://registry.npmmirror.com/vite/-/vite-5.4.9.tgz#215c80cbebfd09ccbb9ceb8c0621391c9abdc19c"
-  integrity sha512-20OVpJHh0PAM0oSOELa5GaZNWeDjcAvQjGXy2Uyr+Tp+/D2/Hdz6NLgpJLsarPTA2QJ6v8mX2P1ZfbsSKvdMkg==
+vite@^5.4.10:
+  version "5.4.10"
+  resolved "https://registry.npmmirror.com/vite/-/vite-5.4.10.tgz#d358a7bd8beda6cf0f3b7a450a8c7693a4f80c18"
+  integrity sha512-1hvaPshuPUtxeQ0hsVH3Mud0ZanOLwVTneA1EgbAM5LhaZEqyPWGRQ7BtaMvUrTDeEaC8pxtj6a6jku3x4z6SQ==
   dependencies:
     esbuild "^0.21.3"
     postcss "^8.4.43"
@@ -1702,27 +1702,27 @@ vite@^5.4.8:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitepress@^1.2.3:
-  version "1.4.1"
-  resolved "https://registry.npmmirror.com/vitepress/-/vitepress-1.4.1.tgz#59c2f242e6a9efd27388093994a5b8df42e9dcb4"
-  integrity sha512-C2rQ7PMlDVqgsaHOa0uJtgGGWaGv74QMaGL62lxKbtFkYtosJB5HAfZ8+pEbfzzvLemYaYwaiQdFLBlexK2sFw==
+vitepress@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.npmmirror.com/vitepress/-/vitepress-1.4.3.tgz#2658ad684c776762694a160a8e2777dd2e797a6a"
+  integrity sha512-956c2K2Mr0ubY9bTc2lCJD3g0mgo0mARB1iJC/BqUt4s0AM8Wl60wSU4zbFnzV7X2miFK1XJDKzGZnuEN90umw==
   dependencies:
     "@docsearch/css" "^3.6.2"
     "@docsearch/js" "^3.6.2"
-    "@shikijs/core" "^1.22.0"
-    "@shikijs/transformers" "^1.22.0"
-    "@shikijs/types" "^1.22.0"
+    "@shikijs/core" "^1.22.2"
+    "@shikijs/transformers" "^1.22.2"
+    "@shikijs/types" "^1.22.2"
     "@types/markdown-it" "^14.1.2"
     "@vitejs/plugin-vue" "^5.1.4"
-    "@vue/devtools-api" "^7.4.6"
+    "@vue/devtools-api" "^7.5.4"
     "@vue/shared" "^3.5.12"
     "@vueuse/core" "^11.1.0"
     "@vueuse/integrations" "^11.1.0"
     focus-trap "^7.6.0"
     mark.js "8.11.1"
     minisearch "^7.1.0"
-    shiki "^1.22.0"
-    vite "^5.4.8"
+    shiki "^1.22.2"
+    vite "^5.4.10"
     vue "^3.5.12"
 
 vue-demi@>=0.14.10:
