@@ -13,9 +13,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Get the content of algolia.json as config
-        id: algolia_config
-        run: echo "config=$(cat crawlerConfig.json | jq -r tostring)" >> $GITHUB_OUTPUT
+      - name: Prepare Algolia DocSearch config
+        run: |
+          echo '${{ secrets.ALGOLIA_CONFIG }}' > config.json
+          cat config.json
 
       - name: Trigger Algolia Crawler
         uses: algolia/algoliasearch-crawler-github-actions@v1
