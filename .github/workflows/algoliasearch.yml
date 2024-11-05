@@ -13,6 +13,10 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Get the content of algolia.json as config
+        id: algolia_config
+        run: echo "config=$(cat crawlerConfig.json | jq -r tostring)" >> $GITHUB_OUTPUT
+
       - name: Trigger Algolia Crawler
         uses: algolia/algoliasearch-crawler-github-actions@v1
         with:
@@ -20,4 +24,6 @@ jobs:
           crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
           algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
           algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
-          site-url: 'https://rrorangeandfriends.site/feed.xml'
+          site-url: 'https://rrorangeandfriends.site/'
+        env:
+          CONFIG: ${{ steps.algolia_config.outputs.config }}
