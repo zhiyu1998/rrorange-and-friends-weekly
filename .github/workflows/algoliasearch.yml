@@ -13,18 +13,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Prepare Algolia DocSearch config
-        run: |
-          echo '${{ secrets.ALGOLIA_CONFIG }}' > config.json
-          cat config.json
-
       - name: Trigger Algolia Crawler
         uses: algolia/algoliasearch-crawler-github-actions@v1
         with:
           crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
           crawler-api-key: ${{ secrets.CRAWLER_API_KEY }}
+          github-token: ${{ github.token }}
+          crawler-name: 'rrorangeandfriends'
           algolia-app-id: ${{ secrets.ALGOLIA_APP_ID }}
           algolia-api-key: ${{ secrets.ALGOLIA_API_KEY }}
           site-url: 'https://rrorangeandfriends.site/'
-        env:
-          CONFIG: ${{ steps.algolia_config.outputs.config }}
