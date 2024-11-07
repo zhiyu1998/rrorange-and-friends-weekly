@@ -1,19 +1,20 @@
-name: Algolia Recrawl
+name: 🕷️Algolia 搜索推送
 
 on:
-  push:
-    branches:
-      - main  # 在推送到 main 分支时触发
+  workflow_run:
+    workflows: ["🚀部署文档"]  # 指定 deploy.yml 的 name
+    types:
+      - completed  # 仅在 deploy.yml 完成后触发
 
 jobs:
   algolia_crawl:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: 📋检查仓库
         uses: actions/checkout@v2
 
-      - name: Trigger Algolia Crawler
+      - name: 🦖触发 Algolia 爬虫
         uses: algolia/algoliasearch-crawler-github-actions@v1
         with:
           crawler-user-id: ${{ secrets.CRAWLER_USER_ID }}
