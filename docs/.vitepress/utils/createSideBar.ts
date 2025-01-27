@@ -1,8 +1,15 @@
 export function createSideBarZH() {
   return [
     {
+      text: '2025年',
+      collapsed: false,
+      items: [
+        { text: '第025期 - 鸥舞湖澜', link: '/posts/2025/025' },
+      ]
+    },
+    {
       text: '2024年',
-      collapsed: true,
+      collapsed: false,
       items: [
         { text: '第024期 - 云渡新岁', link: '/posts/2024/024' },
         { text: '第023期 - 游象鼻山', link: '/posts/2024/023' },
