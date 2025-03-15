@@ -158,3 +158,96 @@ a:link {
 a:visited {
 	color: #E8B86D;
 }
+
+/** 自定义引用块样式 */
+.vp-doc blockquote {
+	border-left: none; /* 移除默认的左边框 */
+	padding: 12px 16px 12px 16px; /* 调整内边距 */
+	border-radius: 0 8px 8px 0; /* 只保留右侧圆角 */
+	margin: 16px 0;
+	position: relative; /* 为伪元素定位做准备 */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* 添加轻微阴影 */
+	transition: all 0.3s ease; /* 添加过渡效果 */
+	margin-left: 0; /* 确保没有左边距 */
+	width: calc(100% - 16px); /* 增加宽度，减去右侧内边距 */
+}
+
+/* 创建左侧装饰条 */
+.vp-doc blockquote::before {
+	content: "";
+	position: absolute;
+	left: 0; /* 装饰条紧贴左侧 */
+	top: 0; /* 从顶部开始 */
+	bottom: 0; /* 延伸到底部 */
+	width: 6px; /* 适当的宽度 */
+	background-color: var(--vp-c-brand-1);
+	border-radius: 0 3px 3px 0; /* 只有右侧是圆角 */
+}
+
+/* 引用块悬停效果 */
+.vp-doc blockquote:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 深色模式下的引用块样式 */
+.dark .vp-doc blockquote {
+	background-color: var(--vp-c-brand-soft);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 深色模式下引用块的左侧装饰条 */
+.dark .vp-doc blockquote::before {
+	background-color: var(--vp-c-brand-1);
+}
+
+/** 自定义滚动条样式 */
+/* 整个网站的滚动条样式 */
+::-webkit-scrollbar {
+	width: 6px; /* 滚动条宽度 */
+	height: 6px; /* 水平滚动条高度 */
+}
+
+::-webkit-scrollbar-track {
+	background: transparent; /* 滚动条轨道背景 */
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.15); /* 极淡的灰色，几乎透明 */
+	border-radius: 3px; /* 圆角 */
+	transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.25); /* 悬停时稍微可见一些 */
+}
+
+/* 深色模式下的滚动条样式 */
+.dark::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.15); /* 深色模式下极淡的白色 */
+}
+
+.dark::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.25); /* 悬停时稍微可见一些 */
+}
+
+/* 特别针对左侧导航栏的滚动条样式 */
+.VPSidebar::-webkit-scrollbar {
+	width: 4px; /* 侧边栏滚动条更细 */
+}
+
+.VPSidebar::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.1); /* 更加透明 */
+}
+
+.VPSidebar::-webkit-scrollbar-thumb:hover {
+	background: rgba(0, 0, 0, 0.2); /* 悬停时稍微可见 */
+}
+
+.dark .VPSidebar::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.1); /* 深色模式下更加透明 */
+}
+
+.dark .VPSidebar::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.2); /* 深色模式下悬停时稍微可见 */
+}
