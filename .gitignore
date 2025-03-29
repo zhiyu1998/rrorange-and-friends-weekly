@@ -133,3 +133,4 @@ dist
 # vitepress
 docs/.vitepress/dist
 cache
+.aider*
