@@ -1,5 +1,5 @@
 {
-  "name": "RrOrange",
+  "name": "rrorangeandfriends",
   "version": "1.0.0",
   "description": "《大橘和朋友们的周刊》： 分享日常冲浪互联网看到好玩的网站、app应用、资源分享、效率软件工具集等",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "keywords": [],
-  "author": "",
+  "author": "zhiyu1998",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.12.12",
@@ -18,7 +18,7 @@
     "sass": "^1.77.2",
     "unplugin-auto-import": "^0.17.6",
     "unplugin-vue-components": "^0.27.0",
-    "vitepress": "^1.4.3"
+    "vitepress": "^1.6.3"
   },
   "dependencies": {
     "@giscus/vue": "^3.0.0",
