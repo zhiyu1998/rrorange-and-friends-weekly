@@ -14,7 +14,7 @@ export async function createRssFileZH(config: SiteConfig) {
     language: "zh-Hans",
     image: `${hostname}/favicon.png`,
     favicon: `${hostname}/favicon.ico`,
-    copyright: "Copyright© 2024-present RrOrange",
+    copyright: `Copyright © 2024–${new Date().getFullYear()} RrOrange`,
   });
 
   const posts = await createContentLoader("posts/**/*.md", {
@@ -22,7 +22,11 @@ export async function createRssFileZH(config: SiteConfig) {
     render: true,
   }).load();
 
-  posts.sort((a, b) => Number(+new Date(b.frontmatter.date) - +new Date(a.frontmatter.date)));
+  posts.sort(
+      (a, b) =>
+          new Date(b.frontmatter.date).valueOf() -
+          new Date(a.frontmatter.date).valueOf()
+  );
 
   for (const { url, excerpt, html, frontmatter } of posts) {
     // 仅保留最近5篇文章
@@ -44,6 +48,7 @@ export async function createRssFileZH(config: SiteConfig) {
         },
       ],
       date: frontmatter.date,
+      image: frontmatter.cover && `${hostname}${frontmatter.cover}`,
     });
   }
 
