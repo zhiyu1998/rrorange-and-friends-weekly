@@ -12,8 +12,8 @@ export async function createRssFileZH(config: SiteConfig) {
     id: hostname,
     link: hostname,
     language: "zh-Hans",
-    image: "/favicon.png",
-    favicon: `/favicon.ico`,
+    image: `${hostname}/favicon.png`,
+    favicon: `${hostname}/favicon.ico`,
     copyright: "Copyright© 2024-present RrOrange",
   });
 
