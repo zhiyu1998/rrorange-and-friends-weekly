@@ -46,8 +46,8 @@ export default defineConfig({
 })
 
 export const search: DefaultTheme.AlgoliaSearchOptions = {
-    appId: '2O90OH4RZ8',
-    apiKey: '77f97884776e9137d79bc5a9f8e14d35',
+    appId: 'HZWQOO2CYB',
+    apiKey: '46d7826fe9bee8db34a21ea83a247110',
     indexName: 'rrorangeandfriends',
     placeholder: '搜索文档',
     translations: {
