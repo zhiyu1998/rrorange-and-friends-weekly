@@ -4,6 +4,7 @@ export function createSideBarZH() {
       text: '2025年',
       collapsed: false,
       items: [
+        { text: '第036期 - 风语山巅', link: '/posts/2025/036' },
         { text: '第035期 - 釜沸生香', link: '/posts/2025/035' },
         { text: '第034期 - 云腴沁粉', link: '/posts/2025/034' },
         { text: '第033期 - 一球听海', link: '/posts/2025/033' },
