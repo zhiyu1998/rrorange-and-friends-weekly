@@ -6,6 +6,7 @@ type Opts = {
   contentSelector?: string;
   externalOnly?: boolean;
   maxKeys?: number;
+  dedupWindowSec?: number;
 };
 
 function getPagePath() {
@@ -143,12 +144,25 @@ async function bumpRemote(endpoint: string, key: string, eventId: string) {
   } catch { /* ignore */ }
 }
 
+function allowLocalClick(key: string, windowSec: number) {
+  if (!windowSec || windowSec <= 0) return true;
+  try {
+    const storageKey = `vp-link-counter:last-click:${key}`;
+    const nowMs = Date.now();
+    const prevMs = Number.parseInt(localStorage.getItem(storageKey) ?? "0", 10) || 0;
+    if (prevMs && nowMs - prevMs < windowSec * 1000) return false;
+    localStorage.setItem(storageKey, `${nowMs}`);
+  } catch { /* ignore */ }
+  return true;
+}
+
 export function setupLinkCountBadges({
   router,
   endpoint,
   contentSelector = ".vp-doc",
   externalOnly = true,
   maxKeys = 500,
+  dedupWindowSec = 0,
 }: Opts) {
   const run = async () => {
     const root = document.querySelector(contentSelector);
@@ -185,6 +199,8 @@ export function setupLinkCountBadges({
 
       const key = a.dataset.lcKey;
       if (!key) return;
+
+      if (!allowLocalClick(key, dedupWindowSec)) return;
 
       const eventId = createEventId();
       bumpLocal(a);

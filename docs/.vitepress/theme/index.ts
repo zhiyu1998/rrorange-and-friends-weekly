@@ -31,6 +31,7 @@ export default {
 				endpoint: "https://vp-link-counter.rrorangeandfriends.de",
 				externalOnly: true,
 				contentSelector: ".vp-doc",
+				dedupWindowSec: 86400,
 			});
 		}
 	},
