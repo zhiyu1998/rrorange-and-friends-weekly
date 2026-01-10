@@ -117,16 +117,14 @@ function bumpLocal(a: HTMLAnchorElement) {
 
 async function bumpRemote(endpoint: string, key: string) {
   try {
-    const payload = JSON.stringify({ key });
-    if (navigator.sendBeacon) {
-      const blob = new Blob([payload], { type: "application/json" });
-      navigator.sendBeacon(`${endpoint}/click`, blob);
-      return;
-    }
-  } catch { /* ignore */ }
-
-  try {
-    await postJson(`${endpoint}/click`, { key });
+    // `sendBeacon` requests may omit the `Origin` header on some browsers, which
+    // breaks the worker-side allowlist check and prevents writes to D1. Use a
+    // simple keepalive POST instead.
+    await fetch(`${endpoint}/click`, {
+      method: "POST",
+      body: JSON.stringify({ key }),
+      keepalive: true,
+    });
   } catch { /* ignore */ }
 }
 
