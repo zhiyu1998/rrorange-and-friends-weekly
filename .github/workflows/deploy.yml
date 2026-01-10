@@ -32,18 +32,17 @@ jobs:
           # 如果你文档需要 Git 子模块，取消注释下一行
           # submodules: true
 
-      - name: 🔧设置 Node.js
-        uses: actions/setup-node@v4
+      - name: 🔧设置 Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: 20
-          cache: yarn
+          bun-version: latest
 
       - name: 📄设置页面
         uses: actions/configure-pages@v4
       - name: 🔥安装依赖
-        run: yarn install # 或 pnpm install / yarn install / bun install
+        run: bun install
       - name: 🪛构建 VitePress
-        run: yarn docs:build # 或 pnpm docs:build / yarn docs:build / bun run docs:build
+        run: bun docs:build
       - name: ⏫上传 Artifact
         uses: actions/upload-pages-artifact@v3
         with:
