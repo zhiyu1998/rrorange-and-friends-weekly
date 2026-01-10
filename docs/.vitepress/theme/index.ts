@@ -28,7 +28,7 @@ export default {
 		if (inBrowser) {
 			setupLinkCountBadges({
 				router,
-				endpoint: "https://vp-link-counter.kirillra3a2203.workers.dev",
+				endpoint: "https://vp-link-counter.rrorangeandfriends.de",
 				externalOnly: true,
 				contentSelector: ".vp-doc",
 			});

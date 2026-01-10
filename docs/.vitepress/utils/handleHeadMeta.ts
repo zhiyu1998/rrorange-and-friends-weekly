@@ -38,7 +38,7 @@ export function addBase(relativePath: string) {
 
 export function handleFontsPreload({ assets }: TransformContext) {
   // 只预加载正文字体，代码字体不预加载，因为可能不会使用或者很少使用
-  const SourceHanSerifCN = assets.find(file => /SourceHanSerifCN-VF\.\w+\.woff2/)
+  const SourceHanSerifCN = assets.find(file => /SourceHanSerifCN-VF\.\w+\.woff2/.test(file))
   
   if (SourceHanSerifCN) {
     return [

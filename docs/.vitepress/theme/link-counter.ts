@@ -80,23 +80,30 @@ async function refreshBadges(endpoint: string, root: Element, externalOnly: bool
 
   console.log("[link-counter] Fetching counts for", uniq.length, "links");
 
-  try {
-    const data = await postJson<{ ok: boolean; counts: Record<string, number> }>(
-      `${endpoint}/batch`,
-      { keys: uniq }
-    );
+  // Cloudflare Worker batch endpoint currently errors on >100 keys.
+  // Chunk requests to keep rendering stable.
+  const batchSize = 100;
+  const counts: Record<string, number> = {};
 
-    console.log("[link-counter] Batch response:", data);
+  for (let offset = 0; offset < uniq.length; offset += batchSize) {
+    const batchKeys = uniq.slice(offset, offset + batchSize);
+    try {
+      const data = await postJson<{ ok: boolean; counts: Record<string, number> }>(
+        `${endpoint}/batch`,
+        { keys: batchKeys }
+      );
 
-    if (!data.ok) return;
-
-    for (const a of anchors) {
-      const k = a.dataset.lcKey;
-      if (!k) continue;
-      addOrUpdateBadge(a, data.counts[k] ?? 0);
+      if (!data.ok) continue;
+      Object.assign(counts, data.counts);
+    } catch (err) {
+      console.error("[link-counter] Failed to fetch counts:", err);
     }
-  } catch (err) {
-    console.error("[link-counter] Failed to fetch counts:", err);
+  }
+
+  for (const a of anchors) {
+    const k = a.dataset.lcKey;
+    if (!k) continue;
+    addOrUpdateBadge(a, counts[k] ?? 0);
   }
 }
 
