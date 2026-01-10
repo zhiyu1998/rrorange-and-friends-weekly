@@ -257,23 +257,35 @@ a:visited {
  * -------------------------------------------------------------------------- */
 
 .vp-link-count {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	margin-left: 6px;
-	font-size: 12px;
-	opacity: 0.6;
+	padding: 1px 6px;
+	min-width: 16px;
+	height: 16px;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 1;
+	color: #fff;
+	background-color: #E8B86D;
+	border-radius: 8px;
 	user-select: none;
-	font-family: var(--vp-font-family-mono);
-	color: var(--vp-c-text-2);
-	transition: opacity 0.2s ease;
+	vertical-align: baseline;
+	position: relative;
+	top: -1px;
+	transition: background-color 0.2s ease;
 }
 
 .vp-link-count:hover {
-	opacity: 0.8;
+	background-color: #d9a555;
 }
 
 .dark .vp-link-count {
-	opacity: 0.5;
+	background-color: #606060;
+	color: #e0e0e0;
 }
 
 .dark .vp-link-count:hover {
-	opacity: 0.7;
+	background-color: #707070;
 }

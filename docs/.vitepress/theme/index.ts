@@ -30,7 +30,7 @@ export default {
 				router,
 				endpoint: "https://vp-link-counter.kirillra3a2203.workers.dev",
 				externalOnly: true,
-				contentSelector: ".VPContent .content",
+				contentSelector: ".vp-doc",
 			});
 		}
 	},

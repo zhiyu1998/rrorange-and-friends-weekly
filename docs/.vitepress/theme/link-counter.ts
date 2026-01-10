@@ -36,14 +36,10 @@ function addOrUpdateBadge(a: HTMLAnchorElement, count: number) {
   if (!badge || !badge.classList.contains("vp-link-count")) {
     badge = document.createElement("span");
     badge.className = "vp-link-count";
-    badge.textContent = `(${count})`;
-    badge.style.marginLeft = "6px";
-    badge.style.fontSize = "12px";
-    badge.style.opacity = "0.75";
-    badge.style.userSelect = "none";
+    badge.textContent = `${count}`;
     a.insertAdjacentElement("afterend", badge);
   } else {
-    badge.textContent = `(${count})`;
+    badge.textContent = `${count}`;
   }
 }
 
@@ -77,28 +73,38 @@ async function refreshBadges(endpoint: string, root: Element, externalOnly: bool
   }
 
   const uniq = Array.from(new Set(keys)).slice(0, maxKeys);
-  if (!uniq.length) return;
+  if (!uniq.length) {
+    console.log("[link-counter] No external links found to track");
+    return;
+  }
 
-  const data = await postJson<{ ok: boolean; counts: Record<string, number> }>(
-    `${endpoint}/batch`,
-    { keys: uniq }
-  );
+  console.log("[link-counter] Fetching counts for", uniq.length, "links");
 
-  if (!data.ok) return;
+  try {
+    const data = await postJson<{ ok: boolean; counts: Record<string, number> }>(
+      `${endpoint}/batch`,
+      { keys: uniq }
+    );
 
-  for (const a of anchors) {
-    const k = a.dataset.lcKey;
-    if (!k) continue;
-    addOrUpdateBadge(a, data.counts[k] ?? 0);
+    console.log("[link-counter] Batch response:", data);
+
+    if (!data.ok) return;
+
+    for (const a of anchors) {
+      const k = a.dataset.lcKey;
+      if (!k) continue;
+      addOrUpdateBadge(a, data.counts[k] ?? 0);
+    }
+  } catch (err) {
+    console.error("[link-counter] Failed to fetch counts:", err);
   }
 }
 
 function bumpLocal(a: HTMLAnchorElement) {
   const badge = a.nextElementSibling as HTMLElement | null;
-  const m = badge?.classList.contains("vp-link-count")
-    ? badge.textContent?.match(/\((\d+)\)/)
-    : null;
-  const curr = m ? parseInt(m[1], 10) : 0;
+  const curr = badge?.classList.contains("vp-link-count")
+    ? Number.parseInt(badge.textContent ?? "0", 10) || 0
+    : 0;
   addOrUpdateBadge(a, curr + 1);
 }
 
@@ -120,21 +126,30 @@ async function bumpRemote(endpoint: string, key: string) {
 export function setupLinkCountBadges({
   router,
   endpoint,
-  contentSelector = ".VPContent .content",
+  contentSelector = ".vp-doc",
   externalOnly = true,
   maxKeys = 500,
 }: Opts) {
   const run = async () => {
-    const root = document.querySelector(contentSelector) || document.body;
+    const root = document.querySelector(contentSelector);
+    if (!root) {
+      console.warn("[link-counter] Content selector not found:", contentSelector);
+      return;
+    }
     await refreshBadges(endpoint, root, externalOnly, maxKeys);
   };
 
-  // 首次加载
-  queueMicrotask(() => void run());
+  // 首次加载 - 等待 DOM 准备好
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => setTimeout(run, 100));
+  } else {
+    // DOM 已经加载，但 Vue 组件可能还在渲染，延迟执行
+    setTimeout(run, 100);
+  }
 
   // 路由切换后
   router.onAfterRouteChanged = () => {
-    setTimeout(() => void run(), 0);
+    setTimeout(() => void run(), 100);
   };
 
   // 捕获点击（即时 +1）
