@@ -133,4 +133,7 @@ dist
 # vitepress
 docs/.vitepress/dist
 cache
-.aider*
+.claude
+.codex
+CLAUDE.md
+.playwright-mcp
