@@ -20,6 +20,21 @@ function stableKey(pagePath: string, absoluteHref: string) {
   return `${pagePath}|${absoluteHref}`;
 }
 
+function createEventId() {
+  try {
+    if (typeof crypto !== "undefined" && "getRandomValues" in crypto) {
+      const bytes = new Uint8Array(16);
+      crypto.getRandomValues(bytes);
+      bytes[6] = (bytes[6] & 0x0f) | 0x40;
+      bytes[8] = (bytes[8] & 0x3f) | 0x80;
+      const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("");
+      return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`;
+    }
+  } catch { /* ignore */ }
+
+  return `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}-${Math.random().toString(16).slice(2)}`;
+}
+
 async function postJson<T>(url: string, body: unknown): Promise<T> {
   const res = await fetch(url, {
     method: "POST",
@@ -115,14 +130,14 @@ function bumpLocal(a: HTMLAnchorElement) {
   addOrUpdateBadge(a, curr + 1);
 }
 
-async function bumpRemote(endpoint: string, key: string) {
+async function bumpRemote(endpoint: string, key: string, eventId: string) {
   try {
     // `sendBeacon` requests may omit the `Origin` header on some browsers, which
     // breaks the worker-side allowlist check and prevents writes to D1. Use a
     // simple keepalive POST instead.
     await fetch(`${endpoint}/click`, {
       method: "POST",
-      body: JSON.stringify({ key }),
+      body: JSON.stringify({ key, event_id: eventId }),
       keepalive: true,
     });
   } catch { /* ignore */ }
@@ -171,8 +186,9 @@ export function setupLinkCountBadges({
       const key = a.dataset.lcKey;
       if (!key) return;
 
+      const eventId = createEventId();
       bumpLocal(a);
-      void bumpRemote(endpoint, key);
+      void bumpRemote(endpoint, key, eventId);
     },
     true
   );
