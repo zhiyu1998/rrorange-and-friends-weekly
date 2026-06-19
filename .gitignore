@@ -139,3 +139,5 @@ cache
 CLAUDE.md
 .playwright-mcp
 workers
+nul
+.trae/rules/git-commit-message.md
