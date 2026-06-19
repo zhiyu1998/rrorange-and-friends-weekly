@@ -1,6 +1,6 @@
 <template></template>
 <script setup lang="ts">
-import { useData } from "vitepress";
+import { useData, inBrowser } from "vitepress";
 import { watch } from "vue";
 
 const { isDark } = useData();
@@ -9,6 +9,8 @@ const { isDark } = useData();
 watch(
 	isDark,
 	() => {
+		// SSR（build）阶段没有 document，跳过避免 "document is not defined" 报错
+		if (!inBrowser) return;
     if(isDark.value) {
       document.documentElement.setAttribute('theme-mode', 'dark');
     } else {
