@@ -289,3 +289,28 @@ a:visited {
 .dark .vp-link-count:hover {
 	background-color: #707070;
 }
+
+/**
+ * 右侧大纲高亮样式
+ * 激活项放大突出，其余项变浅，让当前位置一目了然。
+ * -------------------------------------------------------------------------- */
+
+/* 固定行高，避免激活项放大时大纲整体抖动 */
+.VPDocAsideOutline .outline-link {
+	line-height: 28px;
+	font-size: 14px;
+	color: var(--vp-c-text-3);
+	transition: color 0.25s ease, font-size 0.25s ease, font-weight 0.25s ease;
+}
+
+.VPDocAsideOutline .outline-link:hover {
+	color: var(--vp-c-text-2);
+}
+
+/* 激活项：品牌色 + 加粗 + 放大 */
+.VPDocAsideOutline .outline-link.active {
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--vp-c-brand-1);
+	transition: color 0.25s ease, font-size 0.25s ease, font-weight 0.25s ease;
+}
