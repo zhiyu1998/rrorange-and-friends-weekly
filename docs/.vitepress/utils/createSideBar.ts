@@ -4,6 +4,7 @@ export function createSideBarZH() {
       text: '2026年',
       collapsed: false,
       items: [
+        { text: '第039期 - 花间橘影', link: '/posts/2026/039' },
         { text: '第038期 - 布鲁斯科', link: '/posts/2026/038' },
       ]
     },

@@ -135,6 +135,7 @@ docs/.vitepress/dist
 cache
 .claude
 .codex
+.zcode
 CLAUDE.md
 .playwright-mcp
 workers
