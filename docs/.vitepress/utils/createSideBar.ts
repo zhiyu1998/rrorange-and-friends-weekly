@@ -1,6 +1,10 @@
 export function createSideBarZH() {
   return [
     {
+      text: '大橘和朋友们的热榜',
+      link: '/top-sites',
+    },
+    {
       text: '2026年',
       collapsed: false,
       items: [

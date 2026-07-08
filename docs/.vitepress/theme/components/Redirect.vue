@@ -1,16 +1,27 @@
 <template></template>
 <script setup lang="ts">
-import { useRouter, useRoute } from "vitepress";
+import { useRouter } from "vitepress";
 
 import { createSideBarZH } from "../../utils/createSideBar";
 
 const router = useRouter();
 
 const sideBar = createSideBarZH();
-// 如果有base就修改
-// const base = "/rrorange-and-friends-weekly"
-// const firstItemLink = base + sideBar[0].items[0].link;
-const firstItemLink = sideBar[0].items[0].link;
+
+function findFirstPostLink(items: any[]): string | undefined {
+  for (const item of items) {
+    if (typeof item?.link === "string" && item.link.startsWith("/posts/")) {
+      return item.link;
+    }
+
+    if (Array.isArray(item?.items)) {
+      const match = findFirstPostLink(item.items);
+      if (match) return match;
+    }
+  }
+}
+
+const firstItemLink = findFirstPostLink(sideBar) || "/top-sites";
 
 router.go(firstItemLink);
 </script>
