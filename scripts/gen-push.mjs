@@ -39,8 +39,8 @@ if (!mdPath) {
 }
 
 const raw = readFileSync(mdPath, "utf-8");
-// 归一化行尾，兼容 CRLF（Windows）与 LF
-const content = raw.replace(/\r\n/g, "\n");
+// 去掉 UTF-8 BOM 并归一化行尾，兼容 CRLF（Windows）、CR 与 LF
+const content = raw.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n");
 
 // 解析 frontmatter 取 title
 const fmMatch = content.match(/^---\n([\s\S]*?)\n---/);
