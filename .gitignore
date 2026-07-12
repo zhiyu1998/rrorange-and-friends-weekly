@@ -137,6 +137,7 @@ cache
 .codex
 .zcode
 CLAUDE.md
+AGENTS.md
 .playwright-mcp
 workers
 nul

@@ -8,6 +8,7 @@ export function createSideBarZH() {
       text: '2026年',
       collapsed: false,
       items: [
+        { text: '第041期 - 晴云化狐', link: '/posts/2026/041' },
         { text: '第040期 - 夕路归人', link: '/posts/2026/040' },
         { text: '第039期 - 花间橘影', link: '/posts/2026/039' },
         { text: '第038期 - 布鲁斯科', link: '/posts/2026/038' },
